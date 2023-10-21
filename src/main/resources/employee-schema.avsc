@@ -1,0 +1,23 @@
+{
+    "type": "record",
+    "name": "Employee",
+    "namespace": "com.iikaliada.spring.kafka.project.schema",
+    "fields": [
+    {
+        "name": "id",
+        "type": "int"
+    },
+    {
+        "name": "firstName",
+        "type": "string"
+    },
+    {
+        "name": "lastName",
+        "type": "string"
+    },
+    {
+        "name": "age",
+        "type": "int"
+    }
+    ]
+}
