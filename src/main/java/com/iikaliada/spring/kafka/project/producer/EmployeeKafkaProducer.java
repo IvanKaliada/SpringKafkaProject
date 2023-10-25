@@ -1,9 +1,9 @@
 package com.iikaliada.spring.kafka.project.producer;
 
 import com.iikaliada.spring.kafka.project.schema.Employee;
+import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.support.SendResult;
@@ -12,11 +12,12 @@ import org.springframework.util.concurrent.ListenableFuture;
 import org.springframework.util.concurrent.ListenableFutureCallback;
 
 @Service
+@RequiredArgsConstructor
 public class EmployeeKafkaProducer {
 
     private static final Logger log = LoggerFactory.getLogger(EmployeeKafkaProducer.class);
-    @Autowired
-    private KafkaTemplate<String, Employee> kafkaTemplate;
+
+    private final KafkaTemplate<String, Employee> kafkaTemplate;
 
     @Value("${avro.topic.name}")
     private String employeeTopic;
